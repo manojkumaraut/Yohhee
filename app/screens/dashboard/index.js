@@ -132,10 +132,10 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   text: {
-    fontSize: 25,
+    fontSize: 20,
     color: '#fff',
     // fontSize: 30,
     alignSelf: 'center',
-    marginTop: 30
+    marginTop: 40
   }
 });

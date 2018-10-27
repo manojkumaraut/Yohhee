@@ -16,6 +16,7 @@ import Scan from './app/screens/scan';
 import Notes from './app/screens/notes';
 import Workflow from './app/screens/workflow';
 import LeaderBoard from './app/screens/leaderBoard';
+import Quiz from './app/screens/scan/quiz';
 /* Project Import will lives here */
 
 const Yohhee = createStackNavigator({
@@ -26,6 +27,7 @@ const Yohhee = createStackNavigator({
   Notes: { screen: Notes },
   Workflow: { screen: Workflow },
   LeaderBoard: { screen: LeaderBoard },
+  Quiz: { screen: Quiz }
 }
 );
 
