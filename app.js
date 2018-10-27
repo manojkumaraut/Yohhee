@@ -1,50 +1,38 @@
 /* Package Import will lives here */
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Image } from 'react-native';
+import {
+  createStackNavigator,
+} from 'react-navigation';
 /* Package Import will lives here */
 
 /* Project Import will lives here */
 import { scale } from './app/utils';
 import { Constants } from './app/config';
+import SplashScreen from './app/screens/splashScreen';
+import Login from './app/screens/login';
+import Dashboard from './app/screens/dashboard';
+import Scan from './app/screens/scan';
+import Notes from './app/screens/notes';
+import Workflow from './app/screens/workflow';
+import LeaderBoard from './app/screens/leaderBoard';
 /* Project Import will lives here */
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const Yohhee = createStackNavigator({
+  SplashScreen: { screen: SplashScreen },
+  Login: { screen: Login },
+  Dashboard: { screen: Dashboard },
+  Scan: { screen: Scan },
+  Notes: { screen: Notes },
+  Workflow: { screen: Workflow },
+  LeaderBoard: { screen: LeaderBoard },
+}
+);
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>{Constants.PROJECT_NAME}</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <Yohhee />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: scale(30),
-    fontFamily: "Exo2-Bold",
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    fontFamily: "Exo2-Light",
-    marginBottom: 5,
-  },
-});
